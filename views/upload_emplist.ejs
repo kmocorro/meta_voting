@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><%= page_details.header_title %></title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="../assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../assets/bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="../assets/bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../assets/dist/css/AdminLTE.min.css">
+    <!-- Data tables-->
+    <link rel="stylesheet" href="../assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+        folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="../assets/dist/css/skins/_all-skins.min.css">
+    <!--FAB4-->
+    <link rel="stylesheet" href="../assets/dist/css/fab4meta.css">
+    <!-- Plotly JS-->
+    <script src="../charts/plotly.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="sidebar-mini skin-black">
+<!-- Site wrapper -->
+<div class="wrapper">
+
+    <header class="main-header">
+        <!-- Logo -->
+        <a href="#" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><%= page_details.initial %></span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg"><b><%= page_details.company %></b> <%= page_details.sidebar_title %></span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+        <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+            <!-- Messages: style can be found in dropdown.less
+            <li class="dropdown messages-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-envelope-o"></i>
+                <span class="label label-success"></span>
+                </a>
+                <ul class="dropdown-menu">
+                <li class="header">You have 0 new messages</li>
+                <li>
+                    <!--
+                    <ul class="menu">
+                    <li>
+                        <a href="#">
+                        <div class="pull-left">
+                            <img src="../assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        </div>
+                        <h4>
+                            Support Team
+                            <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                        </h4>
+                        <p>Why not buy a new awesome theme?</p>
+                        </a>
+                    </li>
+                    </ul>
+                    
+                </li>
+                <li class="footer"><a href="#">See All Messages</a></li>
+                </ul>
+            </li>
+            <!-- Notifications: style can be found in dropdown.less 
+            <li class="dropdown notifications-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-bell-o"></i>
+                <span class="label label-warning"></span>
+                </a>
+                <ul class="dropdown-menu">
+                <li class="header">You have 0 new notifications</li>
+                <li>
+                    <!-- inner menu: contains the actual data 
+                    <ul class="menu">
+                    <li>
+                        <a href="#">
+                        <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                        </a>
+                    </li>
+                    </ul>
+                    
+                </li>
+                <li class="footer"><a href="#">View all</a></li>
+                </ul>
+            </li>
+            <!-- Tasks: style can be found in dropdown.less 
+            <li class="dropdown tasks-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-flag-o"></i>
+                <span class="label label-danger"></span>
+                </a>
+                <ul class="dropdown-menu">
+                <li class="header">You have 0 new action requests</li>
+                <li>
+                    <!-- inner menu: contains the actual data
+                    <ul class="menu">
+                    <li>
+                        <a href="#">
+                        <h3>
+                            Design some buttons
+                            <small class="pull-right">20%</small>
+                        </h3>
+                        <div class="progress xs">
+                            <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar"
+                                aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                            <span class="sr-only">20% Complete</span>
+                            </div>
+                        </div>
+                        </a>
+                    </li>
+                    </ul>
+                    
+                </li>
+                <li class="footer">
+                    <a href="#">View all tasks</a>
+                </li>
+                </ul>
+            </li>
+            -->
+            <!-- User Account: style can be found in dropdown.less -->
+            <li class="dropdown user user-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <img src="../assets/dist/img/icon_user.png" class="user-image" alt="User Image">
+                <span class="hidden-xs"><%= user_details.displayName %></span>
+                </a>
+                <ul class="dropdown-menu">
+                <!-- User image -->
+                <li class="user-header">
+                    <img src="../assets/dist/img/icon_user.png" alt="User Image">
+
+                    <p>
+                    <%= user_details.givenName %>
+                    <small><%= user_details.title %></small>
+                    </p>
+                </li>
+                <!-- Menu Body 
+                <li class="user-body">
+                    <!-- /.row 
+                    <div class="row">
+                    <div class="col-xs-6 text-center">
+                        <a href="#">Followers</a>
+                    </div>
+                    <div class="col-xs-6 text-center">
+                        <a href="#">Action Requests</a>
+                    </div>
+                    </div>
+                </li>
+                -->
+                <!-- Menu Footer -->
+                <li class="user-footer">
+                    <!--
+                    <div class="pull-left">
+                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                    </div>-->
+                    <div class="pull-right">
+                    <a href="/logout" class="btn btn-default btn-flat">Logout</a>
+                    </div>
+                </li>
+                </ul>
+            </li>
+            <!-- Control Sidebar Toggle Button 
+            <li>
+                <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+            </li>
+            -->
+            </ul>
+        </div>
+        </nav>
+    </header>
+
+    <!-- =============================================== -->
+
+    <!-- Left side column. contains the sidebar -->
+    <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+        <!-- Sidebar user panel-->
+        <div class="user-panel">
+            <div class="pull-left image">
+            <img src="../assets/dist/img/icon_user.png" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+            <p><%= user_details.givenName %></p>
+            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            </div>
+        </div>
+        
+        <!-- search form 
+        <form action="#" method="get" class="sidebar-form">
+            <div class="input-group">
+            <input type="text" name="q" class="form-control" placeholder="Search...">
+            <span class="input-group-btn">
+                    <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </div>
+        </form>
+        -->
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu" data-widget="tree">
+            <li class="header">MAIN NAVIGATION</li>
+            <li>
+            <a href="/">
+                <i class="fa fa-home"></i> <span>Home</span>
+            </a>
+            </li>
+            <!--
+            <li class="treeview">
+            <a href="#">
+                <i class="fa fa-pie-chart"></i>
+                <span>Reports</span>
+                <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-circle-o"></i>
+                        <span>Fab4 Cycletime</span>
+                        <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Overall Cycletime</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Cluster 1 Cycletime</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Cluster 2 Cycletime</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Cluster 3 Cycletime</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Cluster 4 Cycletime</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Cluster 5 Cycletime</a></li>
+                    </ul>
+                </li>
+            </ul>
+            </li>
+            <li class="treeview">
+            <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span>Prototypes</span>
+                <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+                <li><a href="#"><i class="fa fa-circle-o"></i> Certificate of Analysis</a></li>
+            </ul>
+            </li>
+            <li class="header">SUPPORT</li>
+            <li><a href="#"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
+            -->
+        </ul>
+        <!--reminder ad-->
+        <!--
+        <div id="reminder-ad" class="show color_5">
+            <p class="reminder-ad-p">Hello Fab4,</p>
+            <p class="reminder-ad-p">This app is a platform for prototypes. Any issues, downtime and delays are expected.</p>
+            <p class="reminder-ad-p">Thank you! ❤️</p>
+        </div>
+        -->
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+
+    <!-- =============================================== -->
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+
+        <section class="content-header">
+        </section>
+        <!-- Main content -->
+        <section class="content-header">
+            <h1>
+                Welcome <%= user_details.displayName %>!
+                <small><%= page_details.welcome_message %></small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Vote</li>
+            </ol>
+        </section>
+        <section class="content">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="box box-default">
+                        <div class="box-header with-border">
+
+                        <h3 class="box-title">Data Form</h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <form id="uploademployeeList">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-12" style="margin-bottom: 10px;">
+                                            <label for="uploader_form">Update Fab4 Employee List</label>
+                                            <input type="file" id="upload_form" name="upload_form" required>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div id="responseDivemployeeList">
+                                                <!-- response here-->
+                                            </div>
+                                            <div id="toHideIfSuccess">
+                                                <div class="col-md-12">
+                                                    <button type="submit" id="submitemployeeList" class="btn bg-default btn-block">Submit</button>
+                                                </div>
+                                                <p class="help-block">File format should be employeeList.xlsx</p>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+        <b>Version</b> <%= page_details.version %>
+        </div>
+        <strong><%= page_details.initial %></strong> - <%= page_details.footer %>
+    </footer>
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Create the tabs -->
+        <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+        <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+
+        <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+        </ul>
+        </div>
+    </aside>
+    <!-- /.control-sidebar -->
+    <!-- Add the sidebar's background. This div must be placed
+        immediately after the control sidebar -->
+    <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 3 -->
+<script src="../assets/bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="../assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Data tables-->
+<script src="../assets/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<script src="../assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../assets/bower_components/fastclick/lib/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../assets/dist/js/adminlte.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('.sidebar-menu').tree()
+  })
+</script>
+<script>
+    $(function(){
+        $('#perlot').DataTable();
+    });
+</script>
+<!-- Upload script -->
+<script>
+    window.addEventListener('load', function(){
+
+        function goUpload(){
+
+            let xhr = new XMLHttpRequest();
+            let fd = new FormData(form); // bind form data object and form element
+            
+            xhr.addEventListener('load', function(event){
+                console.log(event.target.response);
+                let resFromServer = JSON.parse(event.target.response);
+                //document.getElementById('responseDivemployeeList').style.display='block';
+                function resDiv(){
+                    let responseDiv = document.getElementById('responseDivemployeeList');
+                    
+                    if(resFromServer.err){
+                        document.getElementById('submitemployeeList').removeAttribute("disabled");
+
+                        if (responseDiv.classList) { 
+                            responseDiv.classList.add("responseDivErr");
+                            responseDiv.innerHTML = resFromServer.err
+                        } else {
+                            // For IE9
+                            var classes = responseDiv.className.split(" ");
+                            var i = classes.indexOf("responseDivErr");
+
+                            if (i >= 0) {
+                                classes.splice(i, 1);
+                            } else { 
+                                classes.push("responseDivErr");
+                                responseDiv.className = classes.join(" "); 
+                                responseDiv.innerHTML = resFromServer.err
+                            }
+                        }
+
+                    } else {
+
+                        if (responseDiv.classList) { 
+                            responseDiv.classList.add("responseDivSuccess");
+                            responseDiv.innerHTML = resFromServer.auth;
+                            
+                            let hideDiv = document.getElementById('toHideIfSuccess');
+                                hideDiv.style.display = "none";
+                            
+                                
+                                setTimeout(function(){
+                                window.location.href="/upload-employee-list";
+                                }, 2000);
+                                
+                               
+                        } else {
+                            // For IE9
+                            var classes = responseDiv.className.split(" ");
+                            var i = classes.indexOf("responseDivSuccess");
+
+                            if (i >= 0) {
+                                classes.splice(i, 1);
+                            } else { 
+                                classes.push("responseDivSuccess");
+                                responseDiv.className = classes.join(" "); 
+                                responseDiv.innerHTML = resFromServer.auth;
+                                
+                                let hideDiv = document.getElementById('toHideIfSuccess');
+                                    hideDiv.style.display = "none";
+
+                                
+                                setTimeout(function(){
+                                window.location.href="/upload-employee-list";
+                                }, 2000);
+                                
+                            }
+                        }
+                    }
+
+                    
+                }
+
+                resDiv();
+            });
+
+            xhr.addEventListener('error', function(event){
+                alert('Something went wrong.');
+            });
+
+            xhr.open('POST', '/api/employeeList');
+            xhr.send(fd);
+
+        }
+
+        // access FORM element
+        let form = document.getElementById('uploademployeeList');
+        // take over submit event
+        form.addEventListener('submit', function(event){
+            event.preventDefault();
+            document.getElementById('submitemployeeList').setAttribute("disabled", "disabled");
+            goUpload();
+        });
+
+
+    });
+</script>
+</body>
+</html>
