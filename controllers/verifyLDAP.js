@@ -1,7 +1,7 @@
 let jwt = require('jsonwebtoken');
 let config = require('../config').authSecret;
 let formidable = require('formidable');
-let mysql = require('../config').poolLocal;
+let mysql = require('../config').pool;
 
 let passport = require('passport');
 let LdapStrategy = require('passport-ldapauth');
