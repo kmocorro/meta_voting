@@ -20,7 +20,7 @@ module.exports = function(app){
             claim: {
                 signup: 'valid'
             }
-        }, config.secret, { expiresIn: 30000 });
+        }, config.secret);
 
         res.render('login', {authenticity_token});
     });
