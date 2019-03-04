@@ -33,7 +33,7 @@ module.exports = function(app){
                             return new Promise(function(resolve, reject){
 
                                 jwt.verify(token, config.secret, function(err, decoded){
-                                    if(err){ reject('Invalid') };
+                                    if(err){ reject('Expired') };
 
                                     let isSignUpValidToken = decoded.claim;
 
