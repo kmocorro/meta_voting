@@ -40,7 +40,7 @@ module.exports = function(app){
                                     if(isSignUpValidToken.signup == 'valid'){
                                         resolve();
                                     } else {
-                                        let invalidToken = 'Invalid';
+                                        let invalidToken = 'Expired';
                                         reject(invalidToken);
                                     }
 
@@ -155,7 +155,7 @@ module.exports = function(app){
                             }));
 
                         }, function(err){
-                            if(err){return res.send({err: err + ' token. Please refresh the page.'})};
+                            if(err){return res.send({err: err + ' token. Refresh the page and try logging in again.'})};
                         });
 
 
