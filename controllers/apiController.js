@@ -140,11 +140,11 @@ module.exports = function(app){
                         /** Candidate's details from uploaded file... */
                         function getCandidates_list(){ // this depends on voter's shift..
                             return new Promise(function(resolve, reject){
-        
+
                                 // contemplating if I should put candidate's list in the database or in local path folder...
                                 // answer, I have to put candidate's info in the database for me to verify if it's a valid vote before accepting the count...
                                 
-                                if(user_shift_details.shift == 'E'){ // display all shift.
+                                if(user_shift_details.shift == 'E' || user_shift_details.shift == 'F'){ // display all shift. for E & F.
         
                                     mysql.getConnection(function(err, connection){
                                         if(err){return reject(err)};
