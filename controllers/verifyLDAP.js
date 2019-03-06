@@ -143,7 +143,7 @@ module.exports = function(app){
                                             res.status(200).send({auth: 'Authenticated'});
 
                                         } else {
-                                            res.send({err: 'Sorry, you are not allowed to vote.'});
+                                            res.send({err: 'Sorry, only non-exempt are allowed to vote.'});
                                         }
 
                                     });
